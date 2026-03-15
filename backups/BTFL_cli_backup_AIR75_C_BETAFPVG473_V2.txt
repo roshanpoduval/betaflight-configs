@@ -1,0 +1,345 @@
+defaults nosave
+
+
+# version
+# Betaflight / STM32G47X (SG47) 4.5.3 Nov 24 2025 / 17:38:09 (0e533ba76) MSP API: 1.46
+# config rev: 2c5a8b5
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name BETAFPVG473_V2
+manufacturer_id BEFH
+mcu_id 004000303235511130303938
+signature 
+
+# name: AIR75 C
+
+# feature
+feature -AIRMODE
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map RTEA1234
+
+# aux
+aux 0 0 3 1475 2100 0 0
+aux 1 13 0 1700 2100 0 0
+aux 2 28 2 900 1300 0 0
+aux 3 35 2 1700 2100 0 0
+
+# adjrange
+adjrange 0 0 1 900 2100 29 1 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665 5645 5885 5905 5925 5945
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 LOWRACE  L FACTORY 5362 5399 5436 5473 5510 5547 5584 5621
+vtxtable powerlevels 5
+vtxtable powervalues 1 2 3 4 0
+vtxtable powerlabels 25 100 200 400 PIT
+
+# vtx
+vtx 0 7 5 0 1 1000 1200
+vtx 1 7 5 0 2 1200 1400
+vtx 2 7 5 0 3 1400 1600
+vtx 3 7 5 0 4 1600 2000
+
+# master
+set gyro_lpf1_static_hz = 0
+set gyro_lpf2_static_hz = 550
+set dyn_notch_count = 2
+set dyn_notch_q = 500
+set dyn_notch_max_hz = 500
+set gyro_lpf1_dyn_min_hz = 0
+set gyro_lpf1_dyn_max_hz = 550
+set acc_calibration = -210,-109,-61,1
+set dshot_idle_value = 600
+set dshot_bidir = ON
+set dshot_bitbang = AUTO
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set align_board_yaw = -45
+set vbat_max_cell_voltage = 440
+set vbat_min_cell_voltage = 335
+set vbat_warning_cell_voltage = 345
+set vbat_scale = 113
+set ibata_offset = -600
+set yaw_motors_reversed = ON
+set small_angle = 180
+set pid_process_denom = 2
+set simplified_gyro_filter_multiplier = 110
+set osd_warn_bitmask = 286719
+set osd_rssi_alarm = 0
+set osd_link_quality_alarm = 75
+set osd_rssi_dbm_alarm = -99
+set osd_cap_alarm = 0
+set osd_alt_alarm = 0
+set osd_tim1 = 0
+set osd_tim2 = 1
+set osd_vbat_pos = 6543
+set osd_rssi_pos = 226
+set osd_link_quality_pos = 6528
+set osd_link_tx_power_pos = 6496
+set osd_rssi_dbm_pos = 2368
+set osd_rsnr_pos = 341
+set osd_tim_1_pos = 386
+set osd_tim_2_pos = 6551
+set osd_remaining_time_estimate_pos = 33
+set osd_flymode_pos = 2423
+set osd_anti_gravity_pos = 341
+set osd_g_force_pos = 341
+set osd_throttle_pos = 2415
+set osd_vtx_channel_pos = 2081
+set osd_crosshairs_pos = 238
+set osd_ah_sbar_pos = 313
+set osd_ah_pos = 185
+set osd_current_pos = 2407
+set osd_mah_drawn_pos = 2441
+set osd_wh_drawn_pos = 341
+set osd_motor_diag_pos = 341
+set osd_craft_name_pos = 43
+set osd_pilot_name_pos = 341
+set osd_gps_speed_pos = 341
+set osd_gps_lon_pos = 341
+set osd_gps_lat_pos = 341
+set osd_gps_sats_pos = 341
+set osd_home_dir_pos = 341
+set osd_home_dist_pos = 98
+set osd_flight_dist_pos = 130
+set osd_compass_bar_pos = 341
+set osd_altitude_pos = 341
+set osd_pid_roll_pos = 341
+set osd_pid_pitch_pos = 341
+set osd_pid_yaw_pos = 341
+set osd_debug_pos = 341
+set osd_power_pos = 341
+set osd_pidrate_profile_pos = 341
+set osd_warnings_pos = 14666
+set osd_avg_cell_voltage_pos = 44
+set osd_pit_ang_pos = 97
+set osd_rol_ang_pos = 65
+set osd_battery_usage_pos = 341
+set osd_disarmed_pos = 267
+set osd_nheading_pos = 341
+set osd_up_down_reference_pos = 312
+set osd_ready_mode_pos = 341
+set osd_nvario_pos = 341
+set osd_esc_tmp_pos = 163
+set osd_esc_rpm_pos = 150
+set osd_esc_rpm_freq_pos = 341
+set osd_rtc_date_time_pos = 341
+set osd_adjustment_range_pos = 341
+set osd_flip_arrow_pos = 341
+set osd_core_temp_pos = 6199
+set osd_log_status_pos = 341
+set osd_stick_overlay_left_pos = 341
+set osd_stick_overlay_right_pos = 341
+set osd_rate_profile_name_pos = 341
+set osd_pid_profile_name_pos = 341
+set osd_profile_name_pos = 341
+set osd_rcchannels_pos = 341
+set osd_camera_frame_pos = 142
+set osd_efficiency_pos = 341
+set osd_total_flights_pos = 341
+set osd_aux_pos = 341
+set osd_sys_goggle_voltage_pos = 341
+set osd_sys_vtx_voltage_pos = 341
+set osd_sys_bitrate_pos = 341
+set osd_sys_delay_pos = 341
+set osd_sys_distance_pos = 341
+set osd_sys_lq_pos = 341
+set osd_sys_goggle_dvr_pos = 341
+set osd_sys_vtx_dvr_pos = 341
+set osd_sys_warnings_pos = 341
+set osd_sys_vtx_temp_pos = 341
+set osd_sys_fan_speed_pos = 341
+set osd_stat_bitmask = 2022
+set osd_canvas_height = 13
+set debug_mode = GYRO_SCALED
+set vtx_band = 5
+set vtx_channel = 8
+set vtx_power = 1
+set vtx_low_power_disarm = UNTIL_FIRST_ARM
+set vtx_freq = 5917
+set craft_name = AIR75 C
+
+profile 0
+
+# profile 0
+set profile_name = GF 1614
+set throttle_boost = 0
+set p_pitch = 35
+set i_pitch = 63
+set d_pitch = 28
+set f_pitch = 28
+set p_roll = 33
+set i_roll = 60
+set d_roll = 25
+set f_roll = 27
+set p_yaw = 33
+set i_yaw = 60
+set f_yaw = 27
+set d_min_roll = 22
+set d_min_pitch = 25
+set d_max_gain = 20
+set auto_profile_cell_count = 1
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set feedforward_jitter_factor = 5
+set simplified_master_multiplier = 75
+set simplified_dmax_gain = 35
+set simplified_feedforward_gain = 30
+set tpa_rate = 60
+set tpa_breakpoint = 1160
+
+profile 1
+
+# profile 1
+set profile_name = GF 1614
+set throttle_boost = 0
+set p_pitch = 35
+set i_pitch = 63
+set d_pitch = 28
+set f_pitch = 28
+set p_roll = 33
+set i_roll = 60
+set d_roll = 25
+set f_roll = 27
+set p_yaw = 33
+set i_yaw = 60
+set f_yaw = 27
+set d_min_roll = 22
+set d_min_pitch = 25
+set d_max_gain = 20
+set auto_profile_cell_count = 1
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set feedforward_jitter_factor = 5
+set simplified_master_multiplier = 75
+set simplified_dmax_gain = 35
+set simplified_feedforward_gain = 30
+set tpa_rate = 60
+set tpa_breakpoint = 1160
+
+profile 2
+
+# profile 2
+set profile_name = default
+
+profile 3
+
+# profile 3
+set profile_name = MGTune
+set anti_gravity_gain = 0
+set throttle_boost = 0
+set p_pitch = 78
+set i_pitch = 112
+set d_pitch = 57
+set f_pitch = 134
+set p_roll = 75
+set i_roll = 107
+set d_roll = 50
+set f_roll = 129
+set p_yaw = 75
+set i_yaw = 107
+set f_yaw = 129
+set d_min_roll = 50
+set d_min_pitch = 57
+set d_max_gain = 20
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 63
+set feedforward_jitter_factor = 5
+set dyn_idle_min_rpm = 30
+set simplified_master_multiplier = 120
+set simplified_i_gain = 80
+set simplified_d_gain = 140
+set simplified_pi_gain = 140
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 90
+set simplified_pitch_d_gain = 95
+set tpa_rate = 75
+set tpa_breakpoint = 1250
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set rateprofile_name = rjp_rp
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 22
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set roll_srate = 92
+set pitch_srate = 92
+set yaw_srate = 92
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 90
+
+rateprofile 1
+
+# rateprofile 1
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 22
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set roll_srate = 92
+set pitch_srate = 92
+set yaw_srate = 92
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 90
+
+rateprofile 2
+
+# rateprofile 2
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 22
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set roll_srate = 92
+set pitch_srate = 92
+set yaw_srate = 92
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 90
+
+rateprofile 3
+
+# rateprofile 3
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 22
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set roll_srate = 92
+set pitch_srate = 92
+set yaw_srate = 92
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 90
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
