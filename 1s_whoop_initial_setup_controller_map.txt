@@ -27,7 +27,7 @@ set auto_profile_cell_count = 1
 ## osd (positions kept in separate file) ##
 set osd_warn_bitmask = 286719
 set osd_stat_bitmask = 2022
-set osd_link_quality_alarm = 70
+set osd_link_quality_alarm = 69
 # disable timers
 set osd_tim1 = 0
 set osd_tim2 = 1

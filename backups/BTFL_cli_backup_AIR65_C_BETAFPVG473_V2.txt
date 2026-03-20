@@ -1,6 +1,5 @@
 defaults nosave
 
-# diff all
 
 # version
 # Betaflight / STM32G47X (SG47) 4.5.3 Nov 26 2025 / 16:01:59 (0e533ba76) MSP API: 1.46
@@ -87,7 +86,7 @@ set pid_process_denom = 2
 set simplified_gyro_filter_multiplier = 110
 set osd_warn_bitmask = 286719
 set osd_rssi_alarm = 0
-set osd_link_quality_alarm = 75
+set osd_link_quality_alarm = 69
 set osd_rssi_dbm_alarm = -99
 set osd_cap_alarm = 0
 set osd_alt_alarm = 0
@@ -174,7 +173,7 @@ set system_hse_mhz = 8
 set debug_mode = GYRO_SCALED
 set vtx_band = 5
 set vtx_channel = 8
-set vtx_power = 2
+set vtx_power = 1
 set vtx_low_power_disarm = UNTIL_FIRST_ARM
 set vtx_freq = 5917
 set craft_name = AIR65 C
