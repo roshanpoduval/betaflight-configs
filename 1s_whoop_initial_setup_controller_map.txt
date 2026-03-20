@@ -22,11 +22,14 @@ adjrange 0 0 1 900 2100 29 1 0 0
 set vbat_max_cell_voltage = 440
 set vbat_min_cell_voltage = 335
 set vbat_warning_cell_voltage = 345
+set auto_profile_cell_count = 1
 
 ## osd (positions kept in separate file) ##
 set osd_warn_bitmask = 286719
 set osd_stat_bitmask = 2022
-set osd_link_quality_alarm = 75
+set osd_link_quality_alarm = 70
 # disable timers
 set osd_tim1 = 0
 set osd_tim2 = 1
+set osd_cap_alarm = 0
+set osd_alt_alarm = 0
