@@ -113,17 +113,23 @@ set vbat_min_cell_voltage = 335
 set yaw_motors_reversed = ON
 set small_angle = 180
 set pid_process_denom = 2
+set osd_units = IMPERIAL
+set osd_rssi_alarm = 0
+set osd_link_quality_alarm = 69
+set osd_cap_alarm = 256
+set osd_alt_alarm = 0
 set osd_vbat_pos = 7212
 set osd_rssi_pos = 2528
 set osd_link_quality_pos = 6688
-set osd_link_tx_power_pos = 2560
+set osd_link_tx_power_pos = 6656
 set osd_tim_2_pos = 7724
-set osd_flymode_pos = 1582
-set osd_throttle_pos = 2612
+set osd_flymode_pos = 3598
+set osd_throttle_pos = 3616
 set osd_vtx_channel_pos = 6144
 set osd_crosshairs_pos = 345
-set osd_current_pos = 544
-set osd_mah_drawn_pos = 564
+set osd_current_pos = 2604
+set osd_mah_drawn_pos = 2611
+set osd_warnings_pos = 14804
 set osd_avg_cell_voltage_pos = 6713
 set osd_core_temp_pos = 7181
 set osd_stat_bitmask = 14316
@@ -140,6 +146,7 @@ set craft_name = M8 Freestyle HD
 profile 0
 
 # profile 0
+set profile_name = default
 set p_pitch = 52
 set i_pitch = 94
 set d_pitch = 30
@@ -160,11 +167,23 @@ set simplified_feedforward_gain = 105
 profile 1
 
 # profile 1
-set iterm_windup = 85
-set d_pitch = 46
+set profile_name = custom
+set p_pitch = 36
+set i_pitch = 85
+set d_pitch = 40
+set f_pitch = 115
+set p_roll = 36
+set i_roll = 85
 set d_roll = 40
-set horizon_level_strength = 50
-set launch_control_mode = NORMAL
+set f_roll = 115
+set p_yaw = 36
+set i_yaw = 85
+set f_yaw = 115
+set d_max_pitch = 45
+set simplified_pids_mode = OFF
+set simplified_master_multiplier = 90
+set simplified_pi_gain = 125
+set simplified_feedforward_gain = 105
 
 profile 2
 
@@ -184,7 +203,7 @@ set d_roll = 40
 set launch_control_mode = NORMAL
 
 # restore original profile selection
-profile 0
+profile 1
 
 rateprofile 0
 
