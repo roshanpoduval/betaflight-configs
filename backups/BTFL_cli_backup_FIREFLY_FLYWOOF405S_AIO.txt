@@ -24,7 +24,9 @@ resource SERIAL_RX 2 NONE
 resource OSD_CS 1 NONE
 
 # feature
+feature -AIRMODE
 feature GPS
+feature TELEMETRY
 feature LED_STRIP
 feature OSD
 
@@ -33,15 +35,21 @@ serial 2 64 115200 57600 0 115200
 serial 3 2 115200 115200 0 115200
 serial 5 131073 115200 57600 0 115200
 
+# map
+map RTEA1234
+
 # led
 led 0 7,7::CB:8
 led 1 8,7::CB:8
 
 # aux
-aux 0 0 0 1700 2100 0 0
-aux 1 2 1 1375 2100 0 0
-aux 2 13 2 1200 1650 0 0
-aux 3 35 3 1700 2100 0 0
+aux 0 0 3 1475 2100 0 0
+aux 1 13 0 1700 2100 0 0
+aux 2 28 2 900 1300 0 0
+aux 3 35 2 1700 2100 0 0
+
+# adjrange
+adjrange 0 0 1 900 2100 29 1 0 0
 
 # rxfail
 rxfail 6 s 2000
@@ -77,51 +85,56 @@ set gps_rescue_min_sats = 5
 set gps_rescue_allow_arming_without_fix = ON
 set pid_process_denom = 4
 set simplified_gyro_filter_multiplier = 120
-set osd_warn_bitmask = 8191
-set osd_vbat_pos = 2464
-set osd_rssi_pos = 2304
-set osd_link_quality_pos = 2240
-set osd_link_tx_power_pos = 234
-set osd_rssi_dbm_pos = 2272
+set osd_warn_bitmask = 286719
+set osd_link_quality_alarm = 69
+set osd_cap_alarm = 0
+set osd_alt_alarm = 0
+set osd_tim1 = 0
+set osd_tim2 = 1
+set osd_vbat_pos = 3151
+set osd_rssi_pos = 6656
+set osd_link_quality_pos = 6752
+set osd_link_tx_power_pos = 6720
+set osd_rssi_dbm_pos = 6688
 set osd_rsnr_pos = 234
-set osd_tim_1_pos = 2424
-set osd_tim_2_pos = 2392
+set osd_tim_1_pos = 3695
+set osd_tim_2_pos = 344
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 2368
+set osd_flymode_pos = 3631
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 234
-set osd_throttle_pos = 2400
+set osd_throttle_pos = 2616
 set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 205
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 78
-set osd_current_pos = 2496
+set osd_current_pos = 2651
 set osd_mah_drawn_pos = 234
 set osd_wh_drawn_pos = 234
 set osd_motor_diag_pos = 234
-set osd_craft_name_pos = 2080
+set osd_craft_name_pos = 32
 set osd_pilot_name_pos = 234
-set osd_gps_speed_pos = 2169
+set osd_gps_speed_pos = 3249
 set osd_gps_lon_pos = 234
 set osd_gps_lat_pos = 234
-set osd_gps_sats_pos = 2132
-set osd_home_dir_pos = 2131
-set osd_home_dist_pos = 2137
+set osd_gps_sats_pos = 3184
+set osd_home_dir_pos = 2554
+set osd_home_dist_pos = 3280
 set osd_flight_dist_pos = 234
 set osd_compass_bar_pos = 234
-set osd_altitude_pos = 2263
+set osd_altitude_pos = 7310
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
 set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
-set osd_warnings_pos = 14826
-set osd_avg_cell_voltage_pos = 2432
+set osd_warnings_pos = 14773
+set osd_avg_cell_voltage_pos = 3619
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
-set osd_disarmed_pos = 2507
+set osd_disarmed_pos = 470
 set osd_nheading_pos = 234
 set osd_up_down_reference_pos = 205
 set osd_ready_mode_pos = 234
@@ -131,7 +144,7 @@ set osd_esc_rpm_freq_pos = 234
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_flip_arrow_pos = 234
-set osd_core_temp_pos = 2329
+set osd_core_temp_pos = 3119
 set osd_log_status_pos = 234
 set osd_stick_overlay_left_pos = 234
 set osd_stick_overlay_right_pos = 234
@@ -154,23 +167,103 @@ set osd_sys_vtx_dvr_pos = 234
 set osd_sys_warnings_pos = 234
 set osd_sys_vtx_temp_pos = 234
 set osd_sys_fan_speed_pos = 234
-set osd_canvas_width = 30
-set osd_canvas_height = 16
+set osd_stat_bitmask = 2022
 set system_hse_mhz = 8
-set vcd_video_system = PAL
 set displayport_msp_fonts = 0,0,0,0
 set pinio_box = 40,41,255,255
 set craft_name = Firefly
 
 profile 0
 
+# profile 0
+set profile_name = default
+set p_pitch = 41
+set i_pitch = 86
+set d_pitch = 41
+set f_pitch = 79
+set p_roll = 40
+set i_roll = 82
+set d_roll = 36
+set f_roll = 76
+set p_yaw = 40
+set i_yaw = 82
+set f_yaw = 76
+set d_min_roll = 36
+set d_min_pitch = 41
+set thrust_linear = 20
+set feedforward_averaging = 3_POINT
+set feedforward_smooth_factor = 30
+set feedforward_jitter_factor = 12
+set dyn_idle_min_rpm = 40
+set simplified_master_multiplier = 85
+set simplified_i_gain = 115
+set simplified_d_gain = 145
+set simplified_pi_gain = 105
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 75
+
 profile 1
 
+# profile 1
+set profile_name = default
+set p_pitch = 41
+set i_pitch = 86
+set d_pitch = 41
+set f_pitch = 79
+set p_roll = 40
+set i_roll = 82
+set d_roll = 36
+set f_roll = 76
+set p_yaw = 40
+set i_yaw = 82
+set f_yaw = 76
+set d_min_roll = 36
+set d_min_pitch = 41
+set thrust_linear = 20
+set feedforward_averaging = 3_POINT
+set feedforward_smooth_factor = 30
+set feedforward_jitter_factor = 12
+set dyn_idle_min_rpm = 40
+set simplified_master_multiplier = 85
+set simplified_i_gain = 115
+set simplified_d_gain = 145
+set simplified_pi_gain = 105
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 75
+
 profile 2
+
+# profile 2
+set profile_name = default
+set p_pitch = 41
+set i_pitch = 86
+set d_pitch = 41
+set f_pitch = 79
+set p_roll = 40
+set i_roll = 82
+set d_roll = 36
+set f_roll = 76
+set p_yaw = 40
+set i_yaw = 82
+set f_yaw = 76
+set d_min_roll = 36
+set d_min_pitch = 41
+set thrust_linear = 20
+set feedforward_averaging = 3_POINT
+set feedforward_smooth_factor = 30
+set feedforward_jitter_factor = 12
+set dyn_idle_min_rpm = 40
+set simplified_master_multiplier = 85
+set simplified_i_gain = 115
+set simplified_d_gain = 145
+set simplified_pi_gain = 105
+set simplified_dmax_gain = 0
+set simplified_feedforward_gain = 75
 
 profile 3
 
 # profile 3
+set profile_name = default
 set p_pitch = 41
 set i_pitch = 86
 set d_pitch = 41
@@ -201,13 +294,39 @@ profile 3
 
 rateprofile 0
 
+# rateprofile 0
+set rateprofile_name = rjp_rp
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 22
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set roll_srate = 92
+set pitch_srate = 92
+set yaw_srate = 92
+set throttle_limit_type = SCALE
+
 rateprofile 1
 
 rateprofile 2
 
+# rateprofile 2
+set rateprofile_name = rjp_rp
+set roll_rc_rate = 6
+set pitch_rc_rate = 6
+set yaw_rc_rate = 22
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 50
+set roll_srate = 92
+set pitch_srate = 92
+set yaw_srate = 92
+set throttle_limit_type = SCALE
+
 rateprofile 3
 
 # restore original rateprofile selection
-rateprofile 2
+rateprofile 0
 
 # save configuration
