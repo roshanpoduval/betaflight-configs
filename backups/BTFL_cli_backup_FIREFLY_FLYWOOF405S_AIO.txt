@@ -93,12 +93,12 @@ set osd_tim1 = 0
 set osd_tim2 = 1
 set osd_vbat_pos = 7247
 set osd_rssi_pos = 6656
-set osd_link_quality_pos = 6752
+set osd_link_quality_pos = 14944
 set osd_link_tx_power_pos = 14912
-set osd_rssi_dbm_pos = 6688
+set osd_rssi_dbm_pos = 14880
 set osd_rsnr_pos = 234
-set osd_tim_1_pos = 7791
-set osd_tim_2_pos = 344
+set osd_tim_1_pos = 1647
+set osd_tim_2_pos = 7791
 set osd_remaining_time_estimate_pos = 234
 set osd_flymode_pos = 7727
 set osd_anti_gravity_pos = 234
@@ -108,8 +108,8 @@ set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 205
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 78
-set osd_current_pos = 2651
-set osd_mah_drawn_pos = 234
+set osd_current_pos = 3618
+set osd_mah_drawn_pos = 3683
 set osd_wh_drawn_pos = 234
 set osd_motor_diag_pos = 234
 set osd_craft_name_pos = 32
@@ -130,7 +130,7 @@ set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
 set osd_warnings_pos = 14773
-set osd_avg_cell_voltage_pos = 7715
+set osd_avg_cell_voltage_pos = 6748
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
 set osd_battery_usage_pos = 234
@@ -144,7 +144,7 @@ set osd_esc_rpm_freq_pos = 234
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_flip_arrow_pos = 234
-set osd_core_temp_pos = 7215
+set osd_core_temp_pos = 15407
 set osd_log_status_pos = 234
 set osd_stick_overlay_left_pos = 234
 set osd_stick_overlay_right_pos = 234
@@ -176,7 +176,7 @@ set craft_name = Firefly
 profile 0
 
 # profile 0
-set profile_name = default
+set profile_name = og 3s
 set p_pitch = 41
 set i_pitch = 86
 set d_pitch = 41
@@ -190,6 +190,7 @@ set i_yaw = 82
 set f_yaw = 76
 set d_min_roll = 36
 set d_min_pitch = 41
+set auto_profile_cell_count = 3
 set thrust_linear = 20
 set feedforward_averaging = 3_POINT
 set feedforward_smooth_factor = 30
@@ -205,7 +206,7 @@ set simplified_feedforward_gain = 75
 profile 1
 
 # profile 1
-set profile_name = default
+set profile_name = og 4s
 set p_pitch = 41
 set i_pitch = 86
 set d_pitch = 41
@@ -219,6 +220,8 @@ set i_yaw = 82
 set f_yaw = 76
 set d_min_roll = 36
 set d_min_pitch = 41
+set motor_output_limit = 70
+set auto_profile_cell_count = 4
 set thrust_linear = 20
 set feedforward_averaging = 3_POINT
 set feedforward_smooth_factor = 30
@@ -263,31 +266,32 @@ set simplified_feedforward_gain = 75
 profile 3
 
 # profile 3
-set profile_name = default
+set profile_name = rjp_tune
+set throttle_boost = 0
 set p_pitch = 41
 set i_pitch = 86
 set d_pitch = 41
-set f_pitch = 79
+set f_pitch = 100
 set p_roll = 40
 set i_roll = 82
 set d_roll = 36
-set f_roll = 76
+set f_roll = 100
 set p_yaw = 40
 set i_yaw = 82
-set f_yaw = 76
+set f_yaw = 100
 set d_min_roll = 36
 set d_min_pitch = 41
-set thrust_linear = 20
 set feedforward_averaging = 3_POINT
 set feedforward_smooth_factor = 30
 set feedforward_jitter_factor = 12
-set dyn_idle_min_rpm = 40
+set dyn_idle_min_rpm = 30
+set simplified_pids_mode = OFF
 set simplified_master_multiplier = 85
 set simplified_i_gain = 115
 set simplified_d_gain = 145
 set simplified_pi_gain = 105
 set simplified_dmax_gain = 0
-set simplified_feedforward_gain = 75
+set simplified_feedforward_gain = 95
 
 # restore original profile selection
 profile 3
